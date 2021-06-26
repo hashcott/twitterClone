@@ -9,7 +9,10 @@ app.set("views","views");
 
 // Route
 app.get("/",(req, res, next) => {
-  res.status(200).render("home");
+  var payload = {
+    title : "Home"
+  }
+  res.status(200).render("home", payload);
 })
 
 // Running Application
