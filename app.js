@@ -29,7 +29,12 @@ app.listen(PORT, async () => {
   try {
     await mongoose.connect(
       "mongodb+srv://admin:hanhphuc@cluster0.mni3m.gcp.mongodb.net/twitterClone?retryWrites=true&w=majority",
-      { useUnifiedTopology: true, useNewUrlParser: true }
+      {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useCreateIndex : true
+      }
     );
     console.log("Connected to mongodb");
   } catch (error) {
