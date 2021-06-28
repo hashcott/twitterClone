@@ -24,9 +24,14 @@ router.post("/", async (req, res, next) => {
     });
 
     if (user === null) {
-      User.create(req.body)
-        .then((us) => console.log(us))
-        .catch((err) => console.log(err));
+      let user = new User({
+        firstName,
+        lastName,
+        email,
+        username,
+        password
+      })
+      await user.save().catch(err => console.log(err))
     } else {
       if (user.email === email) {
         payload.errorMessage = "Email already in use.";
