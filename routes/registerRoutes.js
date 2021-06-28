@@ -29,9 +29,16 @@ router.post("/", async (req, res, next) => {
         lastName,
         email,
         username,
-        password
-      })
-      await user.save().catch(err => console.log(err))
+        password,
+      });
+      try {
+        await user.save();
+        req.session.user = { firstName, lastName, username, email };
+        res.redirect("/");
+      } catch (error) {
+        payload.errorMessage = "Something wrong, try again !";
+        res.status(500).render("register", payload);
+      }
     } else {
       if (user.email === email) {
         payload.errorMessage = "Email already in use.";
