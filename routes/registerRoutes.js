@@ -3,7 +3,10 @@ const router = express.Router();
 const User = require("../schema/UserSchema");
 
 router.get("/", (req, res, next) => {
-  res.status(200).render("register");
+  let payload = {
+    title : "Register"
+  }
+  res.status(200).render("register", payload);
 });
 router.post("/", async (req, res, next) => {
   let firstName = req.body.firstName.trim();

@@ -29,8 +29,9 @@ app.use("/register", registerRoute);
 app.get("/", middleware.requireLogin, (req, res, next) => {
   var payload = {
     title: "Home",
+    user : req.session.user
   };
-  res.status(200).render("home", payload);
+  res.status(200).render("home", payload, user);
 });
 
 // Running Application
