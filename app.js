@@ -31,7 +31,7 @@ app.get("/", middleware.requireLogin, (req, res, next) => {
     title: "Home",
     user : req.session.user
   };
-  res.status(200).render("home", payload, user);
+  res.status(200).render("home", payload);
 });
 
 // Running Application

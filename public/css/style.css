@@ -45,5 +45,8 @@ input[type="submit"] {
   color : #fff;
   border: none;
   border-radius: 2px;
+}
 
+.errorMessage {
+  color: red;
 }

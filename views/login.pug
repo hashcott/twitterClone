@@ -3,7 +3,7 @@ extends layouts/login-layout.pug
 block content 
   .loginContainer 
     h1 Login
-    p.errorMessage.alert.alert-danger #{errorMessage}
+    p.errorMessage #{errorMessage}
     form(method="POST")
       input(type = "text", name = "logUsername",value = logUsername, placeholder = "Username or Email", required="")
       input(type = "password", name="logPassword", placeholder = "Password",  required="")
