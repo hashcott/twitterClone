@@ -3,7 +3,7 @@ extends layouts/login-layout.pug
 block content 
   .loginContainer 
     h1 Register
-    p.errorMessage #{errorMessage}
+    p.errorMessage.alert.alert-danger #{errorMessage}
     form#registerForm(method="POST", onsubmit="event.preventDefault(); matchPassword();")
       input(type = "text", name = "firstName", value=firstName, placeholder = "First Name", required="")
       input(type = "text", name = "lastName", value=lastName, placeholder = "Last Name", required="")
