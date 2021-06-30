@@ -3,6 +3,11 @@
   --buttonHoverBg: #d4edff;
   --lightGray : rgb(230, 236, 240);
   --spacing: 15px;
+  --lightBlue: #9BD1F9;
+}
+
+* {
+  outline: none !important;
 }
 
 a {
@@ -100,4 +105,8 @@ nav a:hover {
   border: none;
   padding: 7px 15px;
   border-radius: 40px;
+}
+
+#submitPostButton:disabled {
+  background-color: var(--lightBlue);
 }
