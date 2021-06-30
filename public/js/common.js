@@ -1,5 +1,11 @@
 document.getElementById("postTextarea").addEventListener("keyup", e => {
-  let textbox = e.target.value.trim();
-  console.log(textbox);
+  let text = e.target.value.trim();
+  let button = document.getElementById("submitPostButton");
+  if(text === "") {
+    button.disabled = true;
+    return;
+  }
+
+  button.disabled = false;
 })
 
