@@ -1,10 +1,18 @@
 :root {
   --blue: #1FA2F1;
   --buttonHoverBg: #d4edff;
+  --lightGray : rgb(230, 236, 240);
+  --spacing: 15px;
 }
 
 a {
   color: inherit;
+}
+
+h1 {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
 }
 
 nav {
@@ -36,5 +44,22 @@ nav a:hover {
 }
 
 .mainSectionContainer {
-  background-color: blue;
+  padding: 0;
+  border-left: 1px solid var(--lightGray);
+  border-right: 1px solid var(--lightGray);
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer {
+  height: 55px;
+  padding: 0 var(--spacing);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--lightGray);
+  flex-shrink: 0;
+}
+
+.titleContainer h1 {
+  flex: 1;
 }
