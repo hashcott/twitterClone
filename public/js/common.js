@@ -1,6 +1,8 @@
-document.getElementById("postTextarea").addEventListener("keyup", e => {
+let button = document.getElementById("submitPostButton");
+let textarea = document.getElementById("postTextarea");
+
+textarea.addEventListener("keyup", e => {
   let text = e.target.value.trim();
-  let button = document.getElementById("submitPostButton");
   if(text === "") {
     button.disabled = true;
     return;
@@ -9,3 +11,14 @@ document.getElementById("postTextarea").addEventListener("keyup", e => {
   button.disabled = false;
 })
 
+button.addEventListener("click", async () => {
+  let content = textarea.value.trim();
+  let data = {
+    content
+  }
+  await fetch("/api/post", {
+    method : "POST",
+    body : data
+  })
+
+})
