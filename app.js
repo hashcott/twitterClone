@@ -30,6 +30,10 @@ app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/logout", logoutRoute);
 
+// APIs
+const postsAPI = require("./routes/api/posts");
+app.use("/api/posts", postsAPI);
+
 app.get("/", middleware.requireLogin, (req, res, next) => {
   var payload = {
     title: "Home",

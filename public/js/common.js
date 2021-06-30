@@ -16,7 +16,7 @@ button.addEventListener("click", async () => {
   let data = {
     content
   }
-  await fetch("/api/post", {
+  await fetch("/api/posts", {
     method : "POST",
     body : data
   })
