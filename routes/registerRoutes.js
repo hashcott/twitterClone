@@ -36,7 +36,7 @@ router.post("/", async (req, res, next) => {
       });
       try {
         await user.save();
-        req.session.user = { firstName, lastName, username, email };
+        req.session.user = user;
         res.redirect("/");
       } catch (error) {
         payload.errorMessage = "Something wrong, try again !";
